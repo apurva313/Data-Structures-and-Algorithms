@@ -37,9 +37,9 @@ public class Anagram {
         boolean isAnagramResult = anagram.isAnagram(str1, str2);
       
         if (isAnagramResult) {
-          System.out.println(str1 + " and " + str2 + " are anagrams.");
+          System.out.println(str1 + " and " + str2 + " are anagrams strings.");
         } else {
-          System.out.println(str1 + " and " + str2 + " are not anagrams.");
+          System.out.println(str1 + " and " + str2 + " are not anagrams strings.");
         }
       }
 }
