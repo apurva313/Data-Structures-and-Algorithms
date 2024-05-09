@@ -1,9 +1,9 @@
 // Java program to count occurrences 
-
+import java.util.*;
+import java.util.Scanner;
 
 class arrayCount
 {
-    // Returns number of times x occurs in arr[0..n-1]
     static int countOccurrences(int arr[], int n, int x)
     {
         int res = 0;
@@ -15,9 +15,21 @@ class arrayCount
     
     public static void main(String args[])
     {
-        int arr[] = {1, 2, 2, 2, 2, 3, 4, 7 ,8 ,8 };
-        int n = arr.length;
-        int x = 2;
-        System.out.println(countOccurrences(arr, n, x));
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter the size of the array:");
+        int n = sc.nextInt();
+        
+        System.out.println("Enter the elements of the array:");
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        
+        
+        System.out.println("Enter the number to count occurrences:");
+        int x = sc.nextInt();
+        
+        System.out.println("The occurence of "+ x +" is: "+countOccurrences(arr, n, x));
     }
 }
