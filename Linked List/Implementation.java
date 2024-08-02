@@ -85,6 +85,25 @@ public class Implementation {
             }
             return temp.data;
         }
+
+        void deleteAt(int idx){
+            if(idx==0){
+                head=head.next;
+                return;
+            }
+            else if(idx<0 || idx>size()){
+                System.out.println("Wrong Index!");
+                return;
+            }
+
+            Node temp=head;
+            for(int i=1; i<=idx-1; i++){
+                temp=temp.next;
+            }
+            temp.next=temp.next.next;
+            tail=temp;
+
+        }
     
     }
 
@@ -106,5 +125,8 @@ public class Implementation {
         ll.display();
         
         System.out.println(ll.getAt(2));
+
+        ll.deleteAt(4);
+        ll.display();
     }
 }
