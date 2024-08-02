@@ -17,6 +17,22 @@ public class basicll {
         displayr(head.next);
     }
 
+    public static void displayrev(Node head){
+        
+        if(head==null) return;
+        displayr(head.next);
+        System.out.print(head.data+" ");
+    }
+
+    public static int lengthCount(Node head){
+        int count=0;
+        while(head!=null){
+            count++;
+            head=head.next;
+        }
+        return count;
+    }
+
 
 
     public static class Node{
@@ -41,6 +57,9 @@ public class basicll {
       display(a); 
       System.out.println();
       displayr(a);
-
+      System.out.println();
+      System.out.println(lengthCount(a));
+      System.out.println("Reverse LL: ");
+      displayrev(a);
     }
 }
