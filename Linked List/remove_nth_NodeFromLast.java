@@ -11,15 +11,17 @@ public class remove_nth_NodeFromLast {
         }
     }
 
-    public static void nthNode(Node head, int n) {
+    public static Node nthNode(Node head, int n) {
         Node slow = head;
         Node fast = head;
 
         for (int i = 1; i <= n; i++) {
             fast = fast.next;
         }
-        if (fast == null)
-            return ;
+        if (fast == null){
+            head=head.next; 
+            return head;
+        }
 
         while (fast.next != null) {
             slow = slow.next;
@@ -27,7 +29,7 @@ public class remove_nth_NodeFromLast {
         }
         slow.next = slow.next.next;
 
-        // return head;
+        return head;
     }
 
     public static void display(Node head){
@@ -55,7 +57,7 @@ public class remove_nth_NodeFromLast {
 
        
         display(a);
-        nthNode(a, 1);
+        a= nthNode(a, 5);
         display(a);
      }
 }
