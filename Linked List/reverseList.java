@@ -1,5 +1,4 @@
 //package Linked List;
-// The time Complexity is O(n)
 
 public class reverseList {
 
@@ -15,7 +14,7 @@ public class reverseList {
         System.out.print(head.data+" ");
     }
 
-    public static Node reverse(Node head){
+    public static Node reverse(Node head){ // The time Complexity is O(n)
         if (head == null || head.next == null) {
             return head;
         }
@@ -24,6 +23,22 @@ public class reverseList {
         head.next = null;
         return newHead;
     }
+
+    public static Node reverse2(Node head){ // The time Complexity is O(1)
+       Node curr=head;
+       Node prev=null;
+       Node Next=null;
+
+       while(curr!=null){
+        Next=curr.next;
+        curr.next=prev;
+        prev=curr;
+        curr=Next;
+       }
+        return prev;
+    }
+
+
 
     public static class Node{
         int data;
@@ -48,7 +63,8 @@ public class reverseList {
         System.out.print("Original LL: ");
         display(a); 
         System.out.print("\nReverse LL: ");
-        a = reverse(a);
+        // a = reverse(a);
+        a= reverse2(a);
         display(a);
     }
 }
