@@ -1,4 +1,5 @@
 //package Linked List;
+// The time Complexity is O(n)
 
 public class reverseList {
 
